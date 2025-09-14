@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ExternalLink, Github, Play } from "lucide-react";
 import { siteConfig } from "@/config/site.config";
@@ -31,7 +31,7 @@ export function Projects() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: easeOut,
       },
     },
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, easeOut } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { siteConfig } from "@/config/site.config";
 import { useMemo } from "react";
@@ -43,7 +43,7 @@ const itemVariants: Variants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };

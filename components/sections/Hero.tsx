@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import { ArrowDown, Download, Mail } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { Button } from '@/components/ui/button';
@@ -31,7 +31,7 @@ export function Hero() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: easeOut,
       },
     },
   };
