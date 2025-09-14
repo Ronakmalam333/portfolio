@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { sendContactMail } from '@/lib/mailer';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -12,16 +11,16 @@ const contactSchema = z.object({
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-
-    // Validate the request body
     const validatedData = contactSchema.parse(body);
 
-    // Send email asynchronously, don't wait for it to finish
-    // © 2025 Ronak Malam – Portfolio Code. Signature ID: RM-PORT-2025
-
-    sendContactMail(validatedData).catch((error) => {
-      console.error('Mailer error:', error);
-    });
+    // Try to send email, but don't fail if mailer has issues
+    try {
+      const { sendContactMail } = await import('@/lib/mailer');
+      await sendContactMail(validatedData);
+    } catch (mailError) {
+      console.error('Mailer error:', mailError);
+      // Continue anyway - form submission still succeeds
+    }
 
     return NextResponse.json(
       { message: 'Message received! We will contact you soon.' },

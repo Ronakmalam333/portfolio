@@ -6,7 +6,7 @@ interface ContactProps { name: string; email: string; subject: string; message: 
 export async function sendContactMail({ name, email, subject, message }: ContactProps) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    auth: { user: process.env.SMTP_USER || siteConfig.email, pass: process.env.SMTP_PASS },
+    auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
   });
 
   const wrapper = "font-family:'Segoe UI',Arial,sans-serif;background:#0f172a;padding:32px;border-radius:12px;max-width:650px;margin:auto;color:#e2e8f0;line-height:1.6;";
@@ -45,7 +45,7 @@ export async function sendContactMail({ name, email, subject, message }: Contact
   `;
 
   await transporter.sendMail({
-    from: `Ronak Malam <${process.env.SMTP_USER || siteConfig.email}>`,
+    from: `Ronak Malam <${process.env.SMTP_USER}>`,
     to: email,
     subject: `Thanks, ${name}! I Received Your Message`,
     html: visitorHtml,
@@ -73,7 +73,7 @@ export async function sendContactMail({ name, email, subject, message }: Contact
   `;
 
   return transporter.sendMail({
-    from: `Portfolio Contact <${process.env.SMTP_USER || siteConfig.email}>`,
+    from: `Portfolio Contact <${process.env.SMTP_USER}>`,
     to: siteConfig.email,
     subject: `New Message from ${name}: "${subject}"`,
     replyTo: email,
