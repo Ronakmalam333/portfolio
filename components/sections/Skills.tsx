@@ -49,7 +49,7 @@ const itemVariants: Variants = {
 };
 
 export function Skills() {
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   // Memoize the grouped skills for performance (prevents recalculation on every render)
   // © 2025 Ronak Malam – Portfolio Code. Signature ID: RM-PORT-2025
@@ -69,7 +69,7 @@ export function Skills() {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={inView ? "visible" : "hidden"}
         >
           <motion.h2
             variants={itemVariants}
@@ -105,9 +105,12 @@ export function Skills() {
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
                   {skills.map((skill, index) => (
-                    <div
+                    <motion.div
                       key={skill.name}
+                      variants={itemVariants}
                       className="group relative"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       <div className="bg-card border border-border rounded-xl p-3 sm:p-4 md:p-6 text-center hover:shadow-lg transition-all duration-100 hover:border-primary/50 min-h-[120px] sm:min-h-[140px] flex flex-col justify-center">
                         <div className="text-2xl sm:text-3xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -123,10 +126,13 @@ export function Skills() {
                               (categories[skill.category as keyof typeof categories]?.color) ?? "from-gray-400 to-gray-600"
                             }`}
                             initial={{ width: 0 }}
-                            animate={{ width: `${skill.level}%` }}
+                            animate={
+                              inView ? { width: `${skill.level}%` } : { width: 0 }
+                            }
                             transition={{
-                              duration: 0.8,
-                              delay: 0.2,
+                              duration: 1,
+                              delay: index * 0.1,
+                              ease: "easeOut",
                             }}
                           />
                         </div>
@@ -134,7 +140,7 @@ export function Skills() {
                           {skill.level}%
                         </span>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
