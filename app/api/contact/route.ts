@@ -8,6 +8,10 @@ const contactSchema = z.object({
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
+export async function GET() {
+  return NextResponse.json({ message: 'Contact API endpoint' }, { status: 200 });
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
