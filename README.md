@@ -1,207 +1,113 @@
-# Modern Portfolio Website Template
+# Modern Portfolio Website
 
-A fully customizable, production-ready portfolio website template built with Next.js 13+, TailwindCSS, Framer Motion, and TypeScript.
+A production-ready portfolio website built with **Next.js 13+**, **TailwindCSS**, **Framer Motion**, and **TypeScript**.
+
+---
 
 ## ✨ Features
 
-- **Modern Tech Stack**: Next.js 13+ with App Router, TypeScript, TailwindCSS
-- **Smooth Animations**: Framer Motion for beautiful page transitions and micro-interactions
-- **Dark/Light Theme**: Built-in theme switching with next-themes
-- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, and structured data
-- **Configuration-Based**: Easy content management through config files
-- **Form Handling**: Contact form with validation and API route
-- **Type Safe**: Full TypeScript implementation with strict typing
-- **Accessibility**: WCAG compliant with proper ARIA labels and keyboard navigation
+* **Modern Tech Stack**: Next.js 13+ with App Router, TypeScript, TailwindCSS
+* **Smooth Animations**: Framer Motion for page transitions and micro-interactions
+* **Dark/Light Theme**: Built-in theme switching
+* **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+* **SEO Optimized**: Meta tags, Open Graph, Twitter Cards
+* **Configuration-Based**: Easy content management through config files
+* **Form Handling**: Contact form with validation and API route
+* **Type Safe**: Full TypeScript implementation
+* **Accessibility**: WCAG compliant with ARIA labels and keyboard navigation
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm, yarn, or pnpm
+* Node.js 18+
+* npm, yarn, or pnpm
 
 ### Installation
 
-1. **Clone and install dependencies:**
-   ```bash
-   git clone <repository-url>
-   cd portfolio-website
-   npm install
-   ```
-
-2. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-3. **Open your browser:**
-   Visit [http://localhost:3000](http://localhost:3000)
-
-## 🎨 Customization
-
-### 1. Site Configuration
-
-Edit `config/site.config.ts` to customize your portfolio content:
-
-```typescript
-export const siteConfig: SiteConfig = {
-  name: "Your Name",
-  title: "Your Title",
-  description: "Your description",
-  // ... more configuration options
-}
+```bash
+git clone <repository-url>
+cd portfolio-website
+npm install
+npm run dev
 ```
 
-### 2. Theme Configuration
+Open your browser at [http://localhost:3000](http://localhost:3000)
 
-Customize colors and themes in `config/theme.config.ts`:
+---
 
-```typescript
-export const themes = {
-  default: 'blue',
-  options: [
-    { name: 'blue', color: '#3b82f6', label: 'Blue' },
-    { name: 'purple', color: '#8b5cf6', label: 'Purple' },
-    // Add more themes
-  ]
-}
-```
+## 🌚 Customization
 
-### 3. Content Sections
+### Site Configuration
 
-#### Personal Information
-- Update `hero`, `about`, and contact information in the config
-- Replace the avatar image URL with your photo
-- Add your social media links and resume
+Edit `config/site.config.ts` to update:
 
-#### Skills
-Add your technical skills with proficiency levels:
+* Name, title, description
+* Hero/About/Contact information
+* Skills, projects, experience, and education
 
-```typescript
-skills: [
-  { name: "React", icon: "⚛️", level: 95, category: "frontend" },
-  // Add more skills
-]
-```
+### Theme Configuration
 
-#### Projects
-Showcase your projects with images, descriptions, and links:
+Modify `config/theme.config.ts` to adjust colors or theme options.
 
-```typescript
-projects: [
-  {
-    id: "project-1",
-    title: "Project Title",
-    description: "Project description",
-    image: "image-url",
-    tags: ["React", "TypeScript"],
-    links: {
-      github: "github-url",
-      live: "live-url"
-    },
-    featured: true
-  }
-]
-```
+### Content Sections
 
-#### Experience & Education
-Add your professional experience and educational background in the respective arrays.
+* **Personal Info**: Hero, About, Contact
+* **Skills**: Technical skills with proficiency
+* **Projects**: Images, descriptions, links
+* **Experience & Education**: Professional & academic background
 
-### 4. Styling and Layout
+### Styling and Layout
 
-- **Colors**: Customize the color palette in `tailwind.config.ts`
-- **Typography**: Fonts are configured in `app/layout.tsx`
-- **Components**: Individual components can be styled in their respective files
-- **Animations**: Modify Framer Motion animations in each section component
+* Colors: `tailwind.config.ts`
+* Typography: `app/layout.tsx`
+* Components: Modify files in `components/`
+* Animations: Framer Motion per section
+
+---
 
 ## 📁 Project Structure
 
 ```
 ├── app/
 │   ├── api/contact/          # Contact form API route
-│   ├── globals.css          # Global styles and CSS variables
-│   ├── layout.tsx           # Root layout with metadata
-│   └── page.tsx             # Main page component
+│   ├── globals.css           # Global styles
+│   ├── layout.tsx            # Root layout
+│   └── page.tsx              # Main page
 ├── components/
-│   ├── layout/
-│   │   └── Navbar.tsx       # Navigation component
-│   ├── sections/            # All page sections
-│   │   ├── Hero.tsx
-│   │   ├── About.tsx
-│   │   ├── Skills.tsx
-│   │   ├── Projects.tsx
-│   │   ├── Experience.tsx
-│   │   ├── Contact.tsx
-│   │   └── Footer.tsx
-│   └── ui/                  # Reusable UI components
-│       └── theme-toggle.tsx
-├── config/
-│   ├── site.config.ts       # Main configuration file
-│   └── theme.config.ts      # Theme configuration
+│   ├── layout/               # Navigation components
+│   ├── sections/             # Page sections
+│   └── ui/                   # Reusable UI components
+├── config/                   # Site and theme configurations
 └── lib/
-    └── utils.ts             # Utility functions
+    └── utils.ts              # Utility functions
 ```
 
-## 🎯 Customization Examples
-
-### Adding a New Section
-
-1. Create a new component in `components/sections/`
-2. Add the section data to `site.config.ts`
-3. Import and add the component to `app/page.tsx`
-4. Update the navigation links if needed
-
-### Changing Color Scheme
-
-1. Modify the color values in `config/theme.config.ts`
-2. Update CSS variables in `app/globals.css` if needed
-3. Adjust component-specific colors as desired
-
-### Adding Animation Effects
-
-All sections use Framer Motion for animations. You can:
-- Modify existing animation variants
-- Add new animation triggers
-- Customize timing and easing functions
+---
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+Deploy to **Vercel, Netlify, or any static hosting service** using standard Next.js deployment steps.
 
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy with zero configuration
-
-### Netlify
-
-1. Build the project: `npm run build`
-2. Deploy the `out` folder to Netlify
-
-### Other Platforms
-
-The project outputs static files and can be deployed to any static hosting service.
+---
 
 ## 📧 Contact Form Setup
 
-The contact form includes:
-- Client-side validation with React Hook Form and Zod
-- API route for handling submissions
-- Success/error states with animations
+* Client-side validation with React Hook Form and Zod
+* API route for handling submissions
+* Supports integration with SendGrid, AWS SES, Nodemailer, or Resend
 
-To enable email sending, integrate with services like:
-- SendGrid
-- AWS SES  
-- Nodemailer
-- Resend
+---
 
 ## 🛠️ Development Commands
 
 ```bash
-# Development server
+# Start dev server
 npm run dev
 
-# Build for production
+# Build production
 npm run build
 
 # Start production server
@@ -211,21 +117,15 @@ npm start
 npm run lint
 ```
 
-## 📝 License
-
-MIT License - feel free to use this template for your portfolio!
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit issues and enhancement requests.
-
-## 🙋‍♂️ Support
-
-If you have any questions or need help customizing the template, please:
-- Open an issue on GitHub
-- Check the documentation
-- Review the configuration examples
-
 ---
 
-**Happy coding!** 🚀
+## 🗒 License
+
+**All Rights Reserved © 2025 Ronak Malam**
+
+This repository and its contents, including all code, designs, and assets, are the exclusive property of Ronak Malam.
+No part of this repository may be copied, modified, distributed, or used in any form without explicit written permission.
+
+**For inquiries:**
+**Email:** [itzronakmalam94@gmail.com](mailto:itzronakmalam94@gmail.com)
+**GitHub:** [https://github.com/Ronakmalam333](https://github.com/Ronakmalam333)
