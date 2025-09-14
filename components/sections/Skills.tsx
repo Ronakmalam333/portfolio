@@ -103,7 +103,7 @@ export function Skills() {
                     {cat.name}
                   </span>
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0.5">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
                   {skills.map((skill, index) => (
                     <motion.div
                       key={skill.name}
@@ -112,11 +112,11 @@ export function Skills() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <div className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-all duration-100 hover:border-primary/50">
-                        <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <div className="bg-card border border-border rounded-xl p-3 sm:p-4 md:p-6 text-center hover:shadow-lg transition-all duration-100 hover:border-primary/50 min-h-[120px] sm:min-h-[140px] flex flex-col justify-center">
+                        <div className="text-2xl sm:text-3xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                           {skill.icon}
                         </div>
-                        <h4 className="font-semibold mb-2 text-sm">
+                        <h4 className="font-semibold mb-2 text-xs sm:text-sm leading-tight">
                           {skill.name}
                         </h4>
                         {/* Skill level bar */}
@@ -136,7 +136,7 @@ export function Skills() {
                             }}
                           />
                         </div>
-                        <span className="text-xs text-muted-foreground">
+                        <span className="text-xs text-muted-foreground font-medium">
                           {skill.level}%
                         </span>
                       </div>
