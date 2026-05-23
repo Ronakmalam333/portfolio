@@ -3,6 +3,7 @@
 import { motion, easeOut } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 import { siteConfig } from '@/config/site.config';
 
 export function About() {
@@ -94,14 +95,24 @@ export function About() {
                   ease: "easeInOut",
                 }}
               />
-              <motion.img
-                src={siteConfig.avatar}
-                alt={siteConfig.name}
-                className="relative w-80 h-80 object-cover rounded-2xl shadow-2xl"
+              <motion.div
+                className="relative w-80 h-80 rounded-2xl shadow-2xl overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
-              />
-              
+              >
+                <Image
+                  src={siteConfig.avatar}
+                  alt={siteConfig.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 320px"
+                  className="object-cover"
+                  priority
+                  quality={90}
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMzMzMiIG9mZnNldD0iMjAlIiAvPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMjIyIiBvZmZzZXQ9IjUwJSIgLz4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzMzMyIgb2Zmc2V0PSI3MCUiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgZmlsbD0iIzMzMyIgLz4KICA8cmVjdCBpZD0iciIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI0NzUiIGZpbGw9InVybCgjZykiIC8+CiAgPGFuaW1hdGUgeGxpbms6aHJlZj0iI3IiIGF0dHJpYnV0ZU5hbWU9IngiIGZyb209Ii03MDAiIHRvPSI3MDAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KPC9zdmc+"
+                />
+              </motion.div>
+
               {/* Floating elements */}
               <motion.div
                 className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full"

@@ -49,7 +49,11 @@ const itemVariants: Variants = {
 };
 
 export function Skills() {
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [ref, inView] = useInView({ 
+    threshold: 0.1, 
+    triggerOnce: true,
+    rootMargin: "50px" // Start animation slightly before element is visible
+  });
 
   // Memoize the grouped skills for performance (prevents recalculation on every render)
   // © 2025 Ronak Malam – Portfolio Code. Signature ID: RM-PORT-2025
@@ -68,7 +72,7 @@ export function Skills() {
         <motion.div
           ref={ref}
           variants={containerVariants}
-          initial="hidden"
+          initial={false} // Prevent initial animation flash
           animate={inView ? "visible" : "hidden"}
         >
           <motion.h2
@@ -125,9 +129,9 @@ export function Skills() {
                             className={`h-2 rounded-full bg-gradient-to-r ${
                               (categories[skill.category as keyof typeof categories]?.color) ?? "from-gray-400 to-gray-600"
                             }`}
-                            initial={{ width: 0 }}
+                            initial={false} // Prevent width animation flash
                             animate={
-                              inView ? { width: `${skill.level}%` } : { width: 0 }
+                              inView ? { width: `${skill.level}%` } : { width: `${skill.level}%` }
                             }
                             transition={{
                               duration: 1,
