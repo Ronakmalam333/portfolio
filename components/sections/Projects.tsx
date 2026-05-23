@@ -188,15 +188,18 @@ export function Projects() {
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.5 }}
                   >
-                    {project.tags.map((tag, index) => (
-                      <Badge
-                        key={`${tag}-${index}`}
-                        variant='outline'
-                        className='text-xs'
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
+                    {project.links.github && (
+                      <Button variant='outline' asChild>
+                        <a
+                          href={project.links.github}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          <Github className='w-4 h-4 mr-2' />
+                          Code
+                        </a>
+                      </Button>
+                    )}
 
                     {(project.links.live || project.links.demo) && (
                       <Button asChild>

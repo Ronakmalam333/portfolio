@@ -190,7 +190,7 @@ export const siteConfig: SiteConfig = {
       tags: [
         "React.js",
         "Node.js",
-        "GeminiAPI",
+        "HuggingFaceAPI",
         "MongoDB",
         "Express.js",
         "JWT",
@@ -198,7 +198,21 @@ export const siteConfig: SiteConfig = {
       ],
       links: {
         github: "https://github.com/Ronakmalam333/Attendance-Project",
-        // live: "https://ai-dashboard.alexjohnson.dev",
+        live: "https://attendance-project-beta.vercel.app/",
+      },
+      featured: true,
+    },
+    {
+      id: "OCR-Extractor",
+      title: "OCR-Extractor",
+      description:
+        "AI-powered OCR application that extracts Multiple Choice Questions from PDF files to Excel with 5-20x faster parallel processing, automatic text/scan detection, and dual quality modes.",
+      image:
+        "https://imgs.search.brave.com/CP19Pyvpt0CsXVkxnwugDH9fY3kR3QYuy7lCoIVLQyc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWd2/My5mb3Rvci5jb20v/aW1hZ2VzL3NpZGUv/d2hhdC1pcy1BSS1P/Q1ItdG9vbC5qcGc",
+      tags: ["Python", "OCR", "Tesseract", "AI/ML", "PDF Processing", "Excel Automation", "NVIDIA API", "PyMuPDF"],
+      links: {
+        github: "https://github.com/Ronakmalam333/OCR-Extractor",
+        demo: "https://github.com/Ronakmalam333/OCR-Extractor/releases/download/v1.0.0/MCQ_Extractor.zip",
       },
       featured: true,
     },
@@ -206,40 +220,26 @@ export const siteConfig: SiteConfig = {
       id: "student-productivity-dashboard",
       title: "Student Productivity Dashboard",
       description:
-        "Full-stack e-commerce solution with payment processing, inventory management, and admin dashboard.",
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["React.js", "Node.js", "MongoDB", "Express", "Express"],
-      links: {
-        github: "https://github.com/alexjohnson/ecommerce",
-        // demo: "https://demo.ecommerce-platform.dev",
-      },
-      featured: true,
-    },
-    {
-      id: "task-manager",
-      title: "Task Management App",
-      description:
         "Collaborative task management application with real-time updates, team collaboration features, and project tracking.",
       image:
         "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["Next.js", "Firebase", "TypeScript", "MUI", "Framer Motion", "Vercel"],
+      tags: ["Next.js", "MongoDB", "JSX", "Joi", "MUI", "Redux"],
       links: {
-        // github: "https://github.com/alexjohnson/task-manager",
+        github: "https://github.com/Ronakmalam333/Student-Productivity-Dashboard-Application",
         // live: "https://tasks.alexjohnson.dev",
       },        
       featured: false,
     },
     {
-      id: "weather-app",
-      title: "Weather Forecast App",
+      id: "Rai-University-Alumni-App",
+      title: "Rai University Alumni App (Private-Repository)",
       description:
-        "Beautiful weather application with detailed forecasts, interactive maps, and location-based services.",
+        "Official Project Given By Rai University For Seprate Alumni Platform.",
       image:
-        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tags: ["React Native", "OpenWeather API", "Redux", "Maps"],
+        "https://images.pexels.com/photos/7944232/pexels-photo-7944232.jpeg",
+      tags: ["React Native", "Node.js", "Expo", "MySQL", "Redis", "Socket.IO", "Cloudinary", "Redux"],
       links: {
-        // github: "https://github.com/alexjohnson/weather-app",
+        // github: "Private-Repo",
       },
       featured: false,
     },
