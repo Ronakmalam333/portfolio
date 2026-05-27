@@ -18,55 +18,6 @@ A production-ready portfolio website built with **Next.js 13+**, **TailwindCSS**
 
 ---
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-* Node.js 18+
-* npm, yarn, or pnpm
-
-### Installation
-
-```bash
-git clone <repository-url>
-cd portfolio-website
-npm install
-npm run dev
-```
-
-Open your browser at [http://localhost:3000](http://localhost:3000)
-
----
-
-## 🌚 Customization
-
-### Site Configuration
-
-Edit `config/site.config.ts` to update:
-
-* Name, title, description
-* Hero/About/Contact information
-* Skills, projects, experience, and education
-
-### Theme Configuration
-
-Modify `config/theme.config.ts` to adjust colors or theme options.
-
-### Content Sections
-
-* **Personal Info**: Hero, About, Contact
-* **Skills**: Technical skills with proficiency
-* **Projects**: Images, descriptions, links
-* **Experience & Education**: Professional & academic background
-
-### Styling and Layout
-
-* Colors: `tailwind.config.ts`
-* Typography: `app/layout.tsx`
-* Components: Modify files in `components/`
-* Animations: Framer Motion per section
-
----
 
 ## 📁 Project Structure
 
@@ -84,12 +35,6 @@ Modify `config/theme.config.ts` to adjust colors or theme options.
 └── lib/
     └── utils.ts              # Utility functions
 ```
-
----
-
-## 🚀 Deployment
-
-Deploy to **Vercel, Netlify, or any static hosting service** using standard Next.js deployment steps.
 
 ---
 
@@ -128,4 +73,5 @@ No part of this repository may be copied, modified, distributed, or used in any 
 
 **For inquiries:**
 **Email:** [itzronakmalam94@gmail.com](mailto:itzronakmalam94@gmail.com)
-**GitHub:** [https://github.com/Ronakmalam333](https://github.com/Ronakmalam333)
+
+**LinkedIn:** [Click to Connect With Me](https://www.linkedin.com/in/ronak-malam/)
