@@ -232,7 +232,7 @@ export const siteConfig: SiteConfig = {
     },
     {
       id: "Rai-University-Alumni-App",
-      title: "Rai University Alumni App (Private-Repository)",
+      title: "Rai University Alumni App (Closed-Source Project)",
       description:
         "Official Project Given By Rai University For Seprate Alumni Platform.",
       image:
