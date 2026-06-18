@@ -8,8 +8,6 @@ const contactSchema = z.object({
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
-export const runtime = "nodejs";
-
 export async function GET() {
   return NextResponse.json({ message: 'Contact API endpoint' }, { status: 200 });
 }
