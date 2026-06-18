@@ -1,21 +1,29 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from 'next-themes';
-import { siteConfig } from '@/config/site.config';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { siteConfig } from "@/config/site.config";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.social.website),
   title: siteConfig.title,
   description: siteConfig.description,
-  keywords: ['portfolio', 'developer', 'full-stack', 'react', 'nextjs', 'typescript'],
+  keywords: [
+    "portfolio",
+    "developer",
+    "full-stack",
+    "react",
+    "nextjs",
+    "typescript",
+  ],
   authors: [{ name: siteConfig.name, url: siteConfig.social.website }],
   creator: siteConfig.name,
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: siteConfig.social.website,
     title: siteConfig.title,
     description: siteConfig.description,
@@ -30,11 +38,11 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.avatar],
-    creator: '@ronak_malam',
+    creator: "@ronak_malam",
   },
   robots: {
     index: true,
@@ -42,17 +50,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-   icons: {
-    icon: '/favicon.png',              // Browser tab icon
-    shortcut: '/favicon.png',          // Shortcut icon
-    apple: '/favicon.png',             // iOS / Apple Touch Icon
+  icons: {
+    icon: "/favicon.png", // Browser tab icon
+    shortcut: "/favicon.png", // Shortcut icon
+    apple: "/favicon.png", // iOS / Apple Touch Icon
   },
-  manifest: '/manifest.json',           
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -61,16 +69,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
+          attribute='class'
+          defaultTheme='dark'
           enableSystem
           disableTransitionOnChange
         >
           {children}
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
