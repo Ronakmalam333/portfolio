@@ -198,7 +198,7 @@ export const siteConfig: SiteConfig = {
       ],
       links: {
         github: "https://github.com/Ronakmalam333/Attendance-Project",
-        live: "https://attendance-project-beta.vercel.app/",
+        live: "https://attendance-management-system-mayamatrix.vercel.app",
       },
       featured: true,
     },
