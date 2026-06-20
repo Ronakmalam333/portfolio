@@ -203,7 +203,7 @@ export const siteConfig: SiteConfig = {
       featured: true,
     },
     {
-      id: "OCR-Extractor",
+      id: "OCR-Extractor (Under Feature Updation...)",
       title: "OCR-Extractor",
       description:
         "AI-powered OCR application that extracts Multiple Choice Questions from PDF files to Excel with 5-20x faster parallel processing, automatic text/scan detection, and dual quality modes.",
