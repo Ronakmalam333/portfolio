@@ -6,24 +6,51 @@ A production-ready portfolio website built with **Next.js 13+**, **TailwindCSS**
 
 ## ✨ Features
 
-* **Modern Tech Stack**: Next.js 13+ with App Router, TypeScript, TailwindCSS
-* **Smooth Animations**: Framer Motion for page transitions and micro-interactions
-* **Dark/Light Theme**: Built-in theme switching
-* **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-* **SEO Optimized**: Meta tags, Open Graph, Twitter Cards
-* **Configuration-Based**: Easy content management through config files
-* **Form Handling**: Contact form with validation and API route
-* **Type Safe**: Full TypeScript implementation
-* **Accessibility**: WCAG compliant with ARIA labels and keyboard navigation
+- **Modern Tech Stack**: Next.js 13+ with App Router, TypeScript, TailwindCSS
+- **Smooth Animations**: Framer Motion for page transitions and micro-interactions
+- **Dark/Light Theme**: Built-in theme switching
+- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- **SEO Optimized**: Meta tags, Open Graph, Twitter Cards
+- **Configuration-Based**: Easy content management through config files
+- **Form Handling**: Contact form with validation and API route
+- **Type Safe**: Full TypeScript implementation
+- **Accessibility**: WCAG compliant with ARIA labels and keyboard navigation
+- **🆕 Project Status Monitoring**: Real-time project status tracking with password-protected admin dashboard
 
 ---
 
+## 🔐 Project Status System
+
+This portfolio includes a comprehensive project status monitoring system:
+
+- **Visual Status Badges** - Display project status on your portfolio
+- **Admin Dashboard** - Password-protected management interface
+- **Automatic Monitoring** - Check if project URLs are accessible
+- **Manual Updates** - Override automatic checks when needed
+- **API Endpoints** - Programmatic access to status data
+- **Automation Tools** - CLI scripts and GitHub Actions
+
+**📚 Documentation:** See the [`docs/`](./docs/) folder for complete guides. - Local Only
+
+**Quick Start:**
+
+1. Login: http://localhost:3000/admin/login
+2. Password: Check `.env.local` file (default: `admin123`)
+3. Read: [`docs/FINAL_SUMMARY.md`](./docs/FINAL_SUMMARY.md)
+
+---
 
 ## 📁 Project Structure
 
 ```
 ├── app/
-│   ├── api/contact/          # Contact form API route
+│   ├── admin/
+│   │   ├── login/            # Admin login page
+│   │   └── project-status/   # Admin dashboard
+│   ├── api/
+│   │   ├── admin/            # Authentication APIs
+│   │   ├── contact/          # Contact form API
+│   │   └── projects/status/  # Project status API
 │   ├── globals.css           # Global styles
 │   ├── layout.tsx            # Root layout
 │   └── page.tsx              # Main page
@@ -32,17 +59,21 @@ A production-ready portfolio website built with **Next.js 13+**, **TailwindCSS**
 │   ├── sections/             # Page sections
 │   └── ui/                   # Reusable UI components
 ├── config/                   # Site and theme configurations
-└── lib/
-    └── utils.ts              # Utility functions
+├── docs/- Ignored                     # 📚 Complete documentation
+├── lib/
+│   ├── auth.ts               # Authentication utilities
+│   ├── project-status.ts     # Status utilities
+│   └── utils.ts              # Utility functions
+└── scripts/                  # Automation scripts
 ```
 
 ---
 
 ## 📧 Contact Form Setup
 
-* Client-side validation with React Hook Form and Zod
-* API route for handling submissions
-* Supports integration with SendGrid, AWS SES, Nodemailer, or Resend
+- Client-side validation with React Hook Form and Zod
+- API route for handling submissions
+- Supports integration with SendGrid, AWS SES, Nodemailer, or Resend
 
 ---
 
@@ -60,6 +91,12 @@ npm start
 
 # Lint code
 npm run lint
+
+# Check project statuses
+npm run status:check
+
+# Update project status
+npm run status:update PROJECT_ID STATUS [MESSAGE]
 ```
 
 ---

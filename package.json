@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "status:check": "node scripts/check-project-status.js",
+    "status:update": "node scripts/update-status.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",

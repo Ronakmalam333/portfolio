@@ -39,12 +39,7 @@ export interface SiteConfig {
     name: string;
     icon: string;
     level: number;
-    category:
-      | "frontend"
-      | "backend"
-      | "tools"
-      | "other"
-      | "ai-ml"
+    category: "frontend" | "backend" | "tools" | "other" | "ai-ml";
   }>;
   projects: Array<{
     id: string;
@@ -58,6 +53,12 @@ export interface SiteConfig {
       demo?: string;
     };
     featured: boolean;
+    status?: {
+      type: "operational" | "maintenance" | "downtime" | "updating";
+      message?: string;
+      lastChecked?: string;
+      manualOverride?: boolean;
+    };
   }>;
   experience: Array<{
     id: string;
@@ -201,6 +202,10 @@ export const siteConfig: SiteConfig = {
         live: "https://attendance-management-system-mayamatrix.vercel.app",
       },
       featured: true,
+      status: {
+        type: "operational",
+        lastChecked: new Date().toISOString(),
+      },
     },
     {
       id: "OCR-Extractor (Under Feature Updation...)",
@@ -209,12 +214,27 @@ export const siteConfig: SiteConfig = {
         "AI-powered OCR application that extracts Multiple Choice Questions from PDF files to Excel with 5-20x faster parallel processing, automatic text/scan detection, and dual quality modes.",
       image:
         "https://imgs.search.brave.com/CP19Pyvpt0CsXVkxnwugDH9fY3kR3QYuy7lCoIVLQyc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWd2/My5mb3Rvci5jb20v/aW1hZ2VzL3NpZGUv/d2hhdC1pcy1BSS1P/Q1ItdG9vbC5qcGc",
-      tags: ["Python", "OCR", "Tesseract", "AI/ML", "PDF Processing", "Excel Automation", "NVIDIA API", "PyMuPDF"],
+      tags: [
+        "Python",
+        "OCR",
+        "Tesseract",
+        "AI/ML",
+        "PDF Processing",
+        "Excel Automation",
+        "NVIDIA API",
+        "PyMuPDF",
+      ],
       links: {
         github: "https://github.com/Ronakmalam333/OCR-Extractor",
         demo: "https://github.com/Ronakmalam333/OCR-Extractor/releases/download/v1.0.0/MCQ_Extractor.zip",
       },
       featured: true,
+      status: {
+        type: "updating",
+        message: "Adding new features and improvements",
+        lastChecked: new Date().toISOString(),
+        manualOverride: true,
+      },
     },
     {
       id: "student-productivity-dashboard",
@@ -225,10 +245,15 @@ export const siteConfig: SiteConfig = {
         "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600",
       tags: ["Next.js", "MongoDB", "JSX", "Joi", "MUI", "Redux"],
       links: {
-        github: "https://github.com/Ronakmalam333/Student-Productivity-Dashboard-Application",
+        github:
+          "https://github.com/Ronakmalam333/Student-Productivity-Dashboard-Application",
         // live: "https://tasks.alexjohnson.dev",
-      },        
+      },
       featured: false,
+      status: {
+        type: "operational",
+        lastChecked: new Date().toISOString(),
+      },
     },
     {
       id: "Rai-University-Alumni-App",
@@ -237,11 +262,26 @@ export const siteConfig: SiteConfig = {
         "Official Project Given By Rai University For Seprate Alumni Platform.",
       image:
         "https://images.pexels.com/photos/7944232/pexels-photo-7944232.jpeg",
-      tags: ["React Native", "Node.js", "Expo", "MySQL", "Redis", "Socket.IO", "Cloudinary", "Redux"],
+      tags: [
+        "React Native",
+        "Node.js",
+        "Expo",
+        "MySQL",
+        "Redis",
+        "Socket.IO",
+        "Cloudinary",
+        "Redux",
+      ],
       links: {
         // github: "Private-Repo",
       },
       featured: false,
+      status: {
+        type: "operational",
+        message: "Private repository - Active development",
+        lastChecked: new Date().toISOString(),
+        manualOverride: true,
+      },
     },
   ],
   experience: [
